@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/RestCommClient/Media/MediaWebRTC.m \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/RestCommClient/Media/ARDAppClient+Internal.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/RestCommClient/Media/MediaWebRTC.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCPeerConnectionFactory.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/RestCommClient/Media/ARDCEODTURNClient.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/RestCommClient/Media/ARDTURNClient.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCPeerConnectionDelegate.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCTypes.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCSessionDescriptionDelegate.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCPeerConnection.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCICECandidate.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCICEServer.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCMediaConstraints.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCMediaStream.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCPair.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCVideoCapturer.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCVideoTrack.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCMediaStreamTrack.h \
+  /Users/Antonis/Documents/restcomm-ios-sdk/RestCommClient/webrtc/include/RTCSessionDescription.h

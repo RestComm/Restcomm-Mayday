@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>014B14C6-909B-4ED0-8650-0DABA11D1BCB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>test-ios-sip-sofia</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E1A02ED0-0962-4FAF-96E4-EA5A34ABEBBC</key>
+		<string>https://github.com/Mobicents/restcomm-ios-sdk.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>staging/test-ios-sip-sofia/test-ios-sip-sofia.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E1A02ED0-0962-4FAF-96E4-EA5A34ABEBBC</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Mobicents/restcomm-ios-sdk.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E1A02ED0-0962-4FAF-96E4-EA5A34ABEBBC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E1A02ED0-0962-4FAF-96E4-EA5A34ABEBBC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>restcomm-ios-sdk</string>
+		</dict>
+	</array>
+</dict>
+</plist>
