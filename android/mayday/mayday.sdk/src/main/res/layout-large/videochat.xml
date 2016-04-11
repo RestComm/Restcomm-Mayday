@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/relativeLayout_video_resize"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_Controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="@color/Black"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView_answer"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:visibility="gone"
+            android:src="@drawable/endcall_green" />
+
+        <ImageView
+            android:id="@+id/imageView_fullscreen"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:visibility="gone"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/maximize" />
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/speaker_icon"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imageView_mute_audio" />
+
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/call_icon"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imageView_hangup" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_video"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_above="@+id/linearLayout_Controls"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/glView_call"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

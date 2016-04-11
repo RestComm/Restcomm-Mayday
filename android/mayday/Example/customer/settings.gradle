@@ -1,0 +1,5 @@
+include ':app', ':library', ':mayday.sdk'
+include ':mayday.sdk'
+include ':restcomm.android.client.sdk'
+project(':restcomm.android.client.sdk').projectDir = new File('../../restcomm.android.client.sdk')
+project(':mayday.sdk').projectDir = new File('../../mayday.sdk')

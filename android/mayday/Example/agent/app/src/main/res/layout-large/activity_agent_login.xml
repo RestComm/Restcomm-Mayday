@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Light_Purple"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/Purple">
+
+        <ImageView
+            android:id="@+id/login_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/setting_icon" />
+
+        <ImageView
+
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/spanlogo1"
+            android:layout_marginLeft="10dp"/>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:orientation="vertical"
+        android:padding="70dp">
+
+        <EditText
+            android:id="@+id/login_editTextUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:drawableLeft="@drawable/username"
+            android:drawablePadding="20dp"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/login_editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="20dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textSize="30sp" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp">
+
+            <CheckBox
+                android:id="@+id/checkBox_remember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remember"
+                android:textSize="23sp" />
+
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/forgot"
+                android:textColor="@color/Black"
+                android:textSize="23sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/login_buttonSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_login"
+            android:text="@string/login"
+            android:textColor="@color/White"
+            android:textSize="27sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/agent_portal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/agent_portal"
+        android:textColor="@color/Black"
+        android:textSize="40sp"
+        android:gravity="center_vertical"/>
+
+
+</RelativeLayout>

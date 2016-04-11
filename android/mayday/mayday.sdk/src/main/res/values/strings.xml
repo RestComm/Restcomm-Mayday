@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">mayday.sdk</string>
+    <string name="enable_internet">Currently network connection is not available. Please check your network connection</string>
+    <string name="rc_device_error">RCDevice Error</string>
+    <string name="connectivity_error">Connectivity Error</string>
+    <string name="ok">OK</string>
+    <string name="enter_a_message">Enter a message</string>
+</resources>

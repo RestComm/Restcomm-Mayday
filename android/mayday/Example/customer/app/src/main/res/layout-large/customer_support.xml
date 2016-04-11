@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_agent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/background_header">
+            <ImageView
+                android:id="@+id/imageView_customer_support_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/back_icon" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/spanlogo1" />
+
+            <ImageView
+                android:id="@+id/imageView_customer_two_mayday"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/mayday" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/DarkGrey"
+                android:orientation="vertical"></LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/relativeLayout1"
+            android:background="@drawable/background_customer_tips"
+            android:padding="10dp">
+
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icn_info" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toEndOf="@+id/imageView11"
+                android:text="Self Help Tips "
+                android:textColor="@color/Orange"
+                android:textSize="40dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/background_customer"
+            android:layout_below="@+id/relativeLayout2">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_toStartOf="@+id/imageView12"
+                android:textColor="@color/Black"
+                android:text="@string/product_info1"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/img5" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/relativeLayout3"
+            android:background="#FFBB77"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/customer_support"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/Black"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="26dp"
+                android:text="@string/product_info2"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textView4"
+                android:src="@drawable/customercare" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/relativeLayout4"
+            android:background="@color/beige"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:text="Current Offers"
+                android:textColor="@color/Black"
+                android:textSize="40dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/relativeLayout5"
+            android:background="@drawable/offer_banner"
+            android:gravity="center">
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
