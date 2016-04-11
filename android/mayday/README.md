@@ -1,55 +1,92 @@
-RestComm Mobile - Android SDK
-================
-
-Android Mobile SDK to easily integrate communication features (messaging, presence, voice, video, screensharing) based on [RestComm](http://restcomm.com/) into native Mobile Applications.
-
-Quick Start guide
-================
-
-For an easy to follow guide on how to get started with RestComm Client SDK for Android, please check:
-
-http://docs.telestax.com/restcomm-client-android-sdk-quick-start/
-
-Reference Documentation
-================
-
-Javadoc style reference documentation can be found at:
-
-http://mobicents.github.io/restcomm-android-sdk/doc/
+RestComm MayDay  - Android SDK
+Android Mobile SDK to easily integrate communication features (messaging, presence, voice, video) based on RestComm MayDay into native Mobile Applications.
+Import Mayday.sdk and restcomm.android.client.sdk following below steps 
+Step 1: Create New Project in Android Studio.
+Step 2: Now open file menu and click on import module.
+Step 3: Open Directory.
+Step 4: Select Directory Module.
+Now select your module location from dialog, here we are using mayday.sdk and restcomm.android.client.sdk.
+Step 5: Register Module.
+1) Register module in build.gradle: For that follow these simple seven steps Open file menu and click on project structure.
+2) Now in Project Structure dialog box select app under module.
+3) Now Click on Dependencies tab in project structure dialog.
+4) Click on + sign in right side corner.
+5) Select Module Dependency from list.
+6) Select module that we have import from dialog box both mayday.sdk and restcomm.android.client.sdk.
+7) Click apply and Ok.
+     Now library/module is registered in build.gradle.
+Step 6: Finally click on sync gradle button.
+Now library-project/module is registered and synced with gradle now you can use it.
 
 OS/Hardware requirements
-================
+RestComm Client SDK for Android has been tested to work on Android API level 16 and above (Android 4.1 and above).
+MayDayRegister
+Initialize MayDayRegister class for registering the device in you activity.
+MayDayRegister mMayDayRegister = new MayDayRegister ();
+mMayDayRegister.setListener(this);
 
-RestComm Client SDK for Android has been tested to work on Android API level 16 and above (Android 4.1 and above)
+//Initialize RCClient for remote connection
+mMayDayRegister.initialize(getApplicationContext());
 
-Latest Messenger .apk
-=============================
+Register video/chat call 
 
-Here's the .apk for the Messenger Restcomm Client SDK sample application: https://tsfr.io/qksja4
+HashMap mParams = new Hash Map<>();
+mParams.put("pref_proxy_domain", "sip:" + “your domain ip address”); //example :192.168.1.100
+mParams.put("pref_sip_user", “customer/agent name”);   //example: bob
+mParams.put("pref_sip_password",”password”);  // example:1234
+mMayDayRegister.createDevice(mParams, getApplicationContext(), MainActivity.class);
 
-Want to Contribute ? 
-========
-[See our Contributors Guide](https://github.com/Mobicents/RestComm/wiki/Contribute-to-RestComm)
+MayDayVideoCall
 
-Issue Tracking and Roadmap
-========
-[Issue Tracker](https://github.com/Mobicents/restcomm-ios-sdk/issues)
+Create a two FrameLayout in activity_main.xml
 
-Questions ?
-========
-Please ask your question on our [public forum](http://groups.google.com/group/restcomm)
+<FrameLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-License
-========
+<FrameLayout
+    android:id="@+id/fragment_mayday"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 
-RestComm is lead by [TeleStax](http://www.telestax.com/), Inc. and developed collaboratively by a community of individual and enterprise contributors.
+Initialize MayDayVideoCallFragment and pass Bundle arguments to whom so ever need to make a video call.
 
-RestComm is licensed under dual license policy. The default license is the Free Open Source GNU Affero GPL v3.0. Alternatively a commercial license can be obtained from Telestax ([contact form](http://www.telestax.com/contactus/#InquiryForm))
+Bundle videoBundle = new Bundle();
+videoBundle.putString(Constant.AGENT_NAME, “customer/agent name”); //example :bob 
+videoBundle.putString(Constant.DOMAIN_ADDRESS, “you domain ip address”); // example : 192.168.1.100
+videoBundle.putString(Constant.VIDEO_CALL, OutGoing); 
+MayDayVideoCallFragment videoCallFragment = new MayDayVideoCallFragment();
+videoCallFragment.setArguments(videoBundle);
 
-Continuous Integration and Delivery
-========
-[![RestComm Continuous Job](http://www.cloudbees.com/sites/default/files/Button-Built-on-CB-1.png)](https://mobicents.ci.cloudbees.com/job/RestComm/)
+FragmentManager  mFragmentManagerMayDay.beginTransaction ().replace(R.id.fragment_mayday, videoCallFragment).commit();
 
-Acknowledgements
-========
-[See who has been contributing to RestComm](http://www.telestax.com/opensource/acknowledgments/)
+
+MayDayMessageChat
+
+Initialize MayDayMessageChatFragment and pass Bundle arguments to whom so ever need to make a message chat.
+
+Bundle chatBundle = new Bundle();
+chatBundle.putString(Constant.AGENT_NAME,“customer/agent name”); //example :bob 
+chatBundle.putString(Constant.DOMAIN_ADDRESS, , “you domain ip address”); // example : 192.168.1.100
+
+MayDayMessageChatFragment messageChatFragment = new MayDayMessageChatFragment();
+messageChatFragment.setArguments(chatBundle);
+
+FragmentManager  mFragmentManagerMayDay.beginTransaction()
+        .replace(R.id.fragment_mayday, messageChatFragment).commit();
+
+Permission in manifest.xml
+
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+Hardware feature in manifest.xml
+
+<uses-feature android:name="android.hardware.camera" />
+<uses-feature android:name="android.hardware.camera.autofocus" />
+
