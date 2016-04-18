@@ -89,50 +89,7 @@ sessionStorage.removeItem("togetherjs-session.peerCache");
 <script src="js/span_client.js"></script>
 <script src="togetherjs/togetherjs-min.js"></script>
 <script src="js/cobrowsing.js"></script>
-
-<script type="text/javascript">
-			jQuery(document).ready(function($) {
-
-				// Define any icon actions before calling the toolbar
-				$('#video-panel').on('click', function( event ) {
-					//event.preventDefault();
-					console.log("click event got triggered!");
-					//$('#video-button').toolbar({content: '#video-options', position: 'bottom'});
-					$('#dailpad-options').hide();
-					$('#video-options').show();
-					
-				});
-				
-				$('#hide-video-panel').on('click', function( event ) {
-					console.log("click event got triggered!");
-					$('#video-options').hide();
-					$('#dailpad-options').hide();
-					
-				});
-				$('#dail-textbox').on('click', function( event ) {
-					console.log("click event got triggered!");
-					$('#video-options').hide();
-					
-				});
-				
-				$('#dest-number').on('click', function( event ) {
-					console.log("click event got triggered!");
-					$('#dailpad-options').hide();
-					$('#video-options').show();
-					
-				});
-				$('#dest-number').on('click', function( event ) {
-					console.log("click event got triggered!");
-					$('#dailpad-options').hide();
-					$('#video-options').show();
-					
-				});
-				$('#normal-button').toolbar({content: '#user-options', position: 'top'});
-				$("#custdrag").draggable();
-			});
-			
-			
-		</script>
+<script src="js/span_widget.js"></script>
 
 <script type="text/javascript">
 var currentLocation = window.location.href;
@@ -315,7 +272,7 @@ function pdfPageLoad(){
 		</div>
 	</div>
 	<div id="agentMainScreen" style="display: none;">
-		<div id="custdrag">
+		<div id="drag" style="top: 150px;">
 			<div style="position: absolute; right: 7%; top: 31%">
 				<div id="normal-button" class="settings-button"
 					style="position: absolute; right: 1%; z-index: 999999999;">
