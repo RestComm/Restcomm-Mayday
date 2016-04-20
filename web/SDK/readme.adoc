@@ -27,7 +27,7 @@ Downlaod the latest tomcat from https://tomcat.apache.org/
 
 Once you have installed the Restcomm platform you are ready to start taking advantage of Restcomm’s features from your Web Apps.
 
-Clone the git repository from https://github.com/RestComm/Restcomm-Mayday.git
+Clone the git repository from https://github.com/RestComm/Restcomm-Mayday.git and navigate to /web/SDK/
 
 ----
 $git clone https://github.com/RestComm/Restcomm-Mayday.git
