@@ -1,8 +1,6 @@
 # RestComm Mayday
 
-Mayday application, like the popular Amazon’s feature in their Kindle Fire Tablets is a remote support and instant helpline.
-
-The application is implemented by SPAN on iOS and Android using Telestax’s Restcomm SDK for WebRTC. 
-
-[![ScreenShot](https://i.ytimg.com/vi/BpgUCZgF9Tw/2.jpg)](https://www.youtube.com/watch?v=BpgUCZgF9Tw)
-
+this repository has been broken down in 3 separate repos:
+* https://github.com/RestComm/Restcomm-Mayday-iOS
+* https://github.com/RestComm/Restcomm-Mayday-Android
+* https://github.com/RestComm/Restcomm-Mayday-Web

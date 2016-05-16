@@ -1,6 +1,9 @@
 *RestComm MayDay  - Android SDK* +
-Android Mobile SDK to easily integrate communication features (messaging, presence, voice, video) based on RestComm MayDay into native Mobile Applications. +
+
+Android Mobile SDK to easily integrate communication features (messaging, presence, voice, video) based on RestComm MayDay into native Mobile Applications. 
+
 *Import Mayday.sdk and restcomm.android.client.sdk following below steps* +
+
 *Step 1:* Create New Project in Android Studio. +
 *Step 2:* Now open file menu and click on import module. +
 *Step 3:* Open Directory. +
