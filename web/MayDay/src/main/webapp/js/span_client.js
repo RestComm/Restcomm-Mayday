@@ -19,7 +19,7 @@
 
 var contact = "";
 var video_flag;
-
+var currentCall;
 var spanWrtcConfiguration = {
 	communicationMode : 'SIP',
 	sip : {
@@ -48,7 +48,7 @@ var spanCallConfiguration = {
 	localMediaStream : '',
 	videoCodecsFilter : "",
 	videoMediaFlag : true,
-	messageMediaFlag : true
+	messageMediaFlag : false
 };
 var chatObject = {
 	id : "",
@@ -61,7 +61,7 @@ var inCommingCallConfiguration = {
 	localMediaStream : '',
 	audioMediaFlag : true,
 	videoMediaFlag : true,
-	messageMediaFlag : true
+	messageMediaFlag : false
 
 };
 
@@ -112,8 +112,8 @@ function spanThemeLogin() {
 		$("#agentMainScreen").hide();
 		return;
 	}
-	$("#loginPage").hide();
-	$("#agentMainScreen").show();
+	/*$("#loginPage").hide();
+	$("#agentMainScreen").show();*/
 	if(g_username == 'alice' || g_username == 'smith'){
 		removejscssfile("js/together_canvas.js","js");
 		loadjscssfile("js/together_canvas.js","js");
@@ -122,10 +122,17 @@ function spanThemeLogin() {
 
 	spanWebrtcEventListner.onWebRTCommClientOpenedEvent = function() {
 		console.log("onWebRTCommClientOpenedEvent");
+		$("#loginPage").hide();
+
+		$("#agentMainScreen").show();
+		
 	};
 
 	spanWebrtcEventListner.onWebRTCommClientOpenErrorEvent = function(error) {
-
+		alert("Invalid Username :Enter the username or password!!");
+		$("#loginPage").show();
+		$("#agentMainScreen").hide();
+		return;
 	};
 
 	spanWebrtcEventListner.onWebRTCommClientClosedEvent = function() {
@@ -182,6 +189,22 @@ function spanThemeLogin() {
 		$("#agent1").show();
 		$("#agent2").hide();
 		$("#call_info").show();
+		currentCall = webRTCommCall;
+		currentCall.hangup();
+		alert(" on close event " +currentCall);
+		currentCall= null;
+		delete currentCall;
+		alert(" after on close event " +currentCall);
+		if (spanCallConfiguration){
+		//	spanCallConfiguration.localMediaStream=null;
+		//	delete spanCallConfiguration.localMediaStream ;
+			
+		}
+		if (inCommingCallConfiguration){
+		//	inCommingCallConfiguration.localMediaStream=null;
+		//	delete inCommingCallConfiguration.localMediaStream ;
+		}
+		
 	};
 
 	spanWebrtcEventListner.onWebRTCommCallOpenedEvent = function(webRTCommCall) {
@@ -193,7 +216,7 @@ function spanThemeLogin() {
 				|| webRTCommCall.getRemoteVideoMediaStream()
 				|| webRTCommCall.getRemoteAudioMediaStream());
 
-		videoElem.muted = true;
+		//videoElem.muted = true;
 		videoElem.play();
 		document.getElementById('video-options').style.display = "block";
 	};
@@ -202,7 +225,23 @@ function spanThemeLogin() {
 
 		console.log("onWebRTCommCallHangupEvent");
 		currentCall = webRTCommCall;
-		currentCall.close();
+		alert(" on hangup event " +currentCall);
+		currentCall.hangup();
+		
+		currentCall= null;
+		delete currentCall;
+		alert("after on hangup event " +currentCall);
+		if (spanCallConfiguration){
+		//	spanCallConfiguration.localMediaStream=null;
+		//	delete spanCallConfiguration.localMediaStream ;
+			
+		}
+		if (inCommingCallConfiguration){
+		//	inCommingCallConfiguration.localMediaStream=null;
+		//	delete inCommingCallConfiguration.localMediaStream ;
+		}
+		
+
 		/*------ for local video -----*/
 		/*var local_video=document.getElementById('localVideo');
 		local_video.src="";*/
@@ -423,7 +462,7 @@ function sendDataMessageParent(text) {
 	parent.currentCall.sendDataMessage(text);
 }
 function callHangUp() {
-	currentCall.close();
+	currentCall.hangup();
 	currentCall = undefined;
 	
 }

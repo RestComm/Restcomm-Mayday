@@ -122,7 +122,7 @@
 	<div id="clickme" style="display:none;">
     </div>
     <div class="slidecontent clearfix" id="slideContentId">
-       <iframe scrolling="yes" style = "overflow:visible;width:773px;height:450px;display: none; "  id="peerBrowser" src="blank.htm" name="myDemoFrame" width="800" height="450" onload="setIframeWidth();"></iframe>
+       <iframe scrolling="yes" style = "overflow:visible;width:773px;height:450px "  id="peerBrowser" src="blank.htm" name="myDemoFrame" width="800" height="450" onload="setIframeWidth();"></iframe>
     </div>
 </div>
 <!--share button-->
@@ -209,7 +209,7 @@
 										<li><a href="#" title="Change Password"><i
 												class="f-icon f-security-change-password"></i> Change
 												Password</a></li>
-										<li><a href="#" title="Logout"><i
+										<li><a href="#" title="Logout" onclick="return agentLogout();"><i
 												class="f-icon f-security-logout"></i> Logout</a></li>
 
 									</ul>
@@ -239,78 +239,53 @@
 			<!--conversation--> 
   <a href="#" id="addClass" class="conversation-btn"><img src="images/mayday-48.png"/></a> 
   <div class="conversation-box chat-conversation" id="convqnimate">
+  <div class="slider"><i class="fa fa-bars"></i>
+        </div>
     <div class="conversation-head">
-      <div class="conversation-head-left pull-left" onclick="toolbarToggel()"><img src="images/mayday-48.png"></div>
+
+    	
+      <!--<div class="conversation-head-left pull-left" onclick="toolbarToggel()"><img src="images/mayday-48.png"></div>-->
       <div class="conversation-head-right pull-right">
-        <button data-widget="remove" id="removeConv" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+      	<button  id="removeConv" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+        
       </div>
     </div>
     <div class="conversation-body">
-      <div class="well well-lg" id="toolbar">
-        <div class="col-md-15"> 
-          <a href="#" id="video-panel" onclick=" return spanCall(true);">
-          <button type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> </button>
-          <h4>VIDEO</h4>
-          </a>
-        </div>
-        <div class="col-md-15">
-          <button type="button" class="btn btn-primary"> <span class="fa fa-microphone" aria-hidden="true"></span> </button>
-          <h4>AUDIO</h4>
-        </div>
-        <div class="col-md-15">
-        <a href="#" id="chat_popup" onclick="return chat_pop(); " data-toggle="tooltip" title="Insant Message">
-          <button type="button" class="btn btn-primary"> <span class="fa fa-comments-o" aria-hidden="true"></span> </button>
-          <h4>CHAT</h4>
-        </a>
-        </div>
-        <div class="col-md-15">
-          <button type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span> </button>
-          <h4>SHARE</h4>
-        </div>
-        <div class="col-md-15">
-        <a href="#" id="hide-video-panel" onclick="callHangUp();" data-toggle="tooltip" title="End Call">
-          <button type="button" class="btn btn-primary"> <span class="fa fa-ban" aria-hidden="true"></span> </button>
-          <h4>END CALL</h4>
-         </a>
-        </div>
-        <div class="clearfix"></div>
-      </div>
+      
       <div class="conversation_div"> 
-        <!--video-->
-        <div id="video-options" class="toolbar-icons" style="display: none;z-index: 9999; width: 420px; height: 176px;">
-          <video width="100%" height="100%"  id="remoteVideo"  autoplay controls> Your browser does not support the video tag. </video>
+      <!--video-->
+        <div id="video-options" class="toolbar-icons" style="display: none;z-index: 9999; ">
+          <video width="99%" height="200px"  id="remoteVideo"  autoplay controls><source src="" type="video/mp4"> Your browser does not support the video tag. </video>
+          <div id="video-controls">
+    
+    <button type="button" id="CloseVideo">Close Video</button>
+  </div>
+</div>
+ 
         </div>
+  
         
         <!--chat--> 
          <!--CHAT-->
 <div class="popup-box chat-popup" id="qnimate">
-    		  <div class="popup-head">
-				<div id="chat_headername" class="popup-head-left pull-left"><img src="images/profile-icon.png" alt="pawan"> </div>
-					  <div class="popup-head-right pull-right">
-						<div class="btn-group">
-    								  <button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">
-									   <i class="glyphicon glyphicon-cog"></i> </button>
-									  <ul role="menu" class="dropdown-menu pull-right">
-										<li><a href="#"><i class="fa fa-video-camera"></i> Video Call</a></li>
-										<li><a href="#"><i class="fa fa-phone"></i> Audio Call</a></li>
-										<li><a href="#"><i class="fa fa-paperclip"></i> Send File</a></li>
-										<li class="divider"></li>
-										<li><a href="#"><i class="fa fa-ban"></i> Block</a></li>
-										<li><a href="#"><i class="fa fa-eraser"></i> Clear History</a></li>
-									  </ul>
-						</div>
-						
-						<button data-widget="remove" id="removeClass" class="chat-header-button pull-right" onclick="hide_popup()" type="button"><i class="glyphicon glyphicon-off"></i></button>
-                      </div>
-			  </div>
+    		
 			<div class="popup-messages">
 			</div>
 			<div class="popup-messages-footer">
 			<textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
 			<div class="btn-footer">
-			<button class="bg_none"><i class="glyphicon glyphicon-film"></i> </button>
-			<button class="bg_none"><i class="glyphicon glyphicon-camera"></i> </button>
-            <button class="bg_none"><i class="glyphicon glyphicon-paperclip"></i> </button>
+            <a href="#" id="video-panel" onclick=" return spanCall(true);">
+			<button class="bg_none"><i class="glyphicon glyphicon-facetime-video"></i> </button>
+            </a>
+            <a href="#" id="video-panel" onclick=" return spanCall(false);">
+			<button class="bg_none"><i class="fa fa-phone"></i> </button>
+			</a>
+			<a href="#" id="video-panel" onclick=" return showPdfScreen();">
+            <button class="bg_none"><i class="glyphicon glyphicon-share"></i> </button>
+            </a>
+            <a href="#" id="video-panel" onclick="cobrowsingWindow();">
+            <button class="bg_none"><i class="fa fa-pencil-square-o"></i> </button>
+            </a>
 			<button class="bg_none pull-right"><i class="fa fa-arrow-circle-right" onclick="sendMessage();"></i> </button>
 			</div>
 			</div>
@@ -319,7 +294,7 @@
    <!--END CHAT--> 
       </div>
     </div>
-    <div class="conversation-messages-footer"> </div>
+    <!--<div class="conversation-messages-footer"> </div>-->
   </div>
   <!--END CONVERTATION-->
 			<!--POPUP-->
@@ -615,8 +590,13 @@
 <script src="js/jQuery-1.11.1-min.js"></script> 
 <script src="js/jquery-1.7.2.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
+<script src="js/span_screenShare.js" type="text/javascript"></script>
 <script>
 
+  $(function() {
+   // $( "#convqnimate" ).draggable();
+  });
+  
 $(function () {
     $("#clickshare").toggle(function () {
         $(this).parent().animate({right:'0px'}, {queue: false, duration: 500});
@@ -630,9 +610,20 @@ $("#addClass").click(function () {
           $('#convqnimate').addClass('conversation-box-on');
             });
           
-            $("#removeConv").click(function () {
+          $("#removeConv").click(function () {
           $('#convqnimate').removeClass('conversation-box-on');
+		  $(".conversation-btn").css("display","block");
             });
+			
+			 
+	$(".slider").toggle(function () {
+		$(".conversation-btn").css("display","none");
+			
+      $(".conversation-box").animate({right:'-380px'}, {queue: false, duration: 500});
+    }, function () {
+       $(".conversation-box").animate({right:'0px'}, {queue: false, duration: 500});
+	  
+    });
   })
   $(function(){
 	$("#chat_popup").click(function () {
@@ -646,7 +637,7 @@ $("#addClass").click(function () {
  }); 
 </script> 
 
-</body>
+
 <script>
 var show= false;
 function toolbarToggel(){
@@ -658,5 +649,22 @@ function toolbarToggel(){
 	$("#toolbar").hide();
 	}
 }
+
+
+$(function () {
+    $("#clickme").toggle(function () {
+	
+        $(this).parent().animate({left:'0px'}, {queue: false, duration: 500});
+    }, function () {
+        $(this).parent().animate({left:'-63%'}, {queue: false, duration: 500});
+    });
+	
+});
+
+
+function cobrowsingWindow(){
+	$("#clickme").click();
+}
 </script>
+</body>
 </html>

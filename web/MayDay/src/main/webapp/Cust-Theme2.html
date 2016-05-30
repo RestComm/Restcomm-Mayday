@@ -50,8 +50,8 @@ body {
 <link href="Style/font-awesome.min.css" rel="stylesheet" />
 <link href="Style/bootstrap.css" rel="stylesheet" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/customerscreen.css" rel="stylesheet" type="text/css">
-<link href="css/customer.css" rel="stylesheet" type="text/css">
+<link href="css/customerscreen_theme2.css" rel="stylesheet" type="text/css">
+<link href="css/customer_theme2.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/yamm3!.css">
 <!-- Fonts -->
 <link rel="stylesheet" type="text/css"
@@ -73,7 +73,8 @@ body {
 
 
 <!-- <script src="js/jquery.min.js"></script> -->
-<script src="js/jQuery-1.11.1-min.js"></script>
+<!-- <script src="js/jQuery-1.11.1-min.js"></script> -->
+<script src="js/jquery-1.7.2.min.js"></script> 
 <script src="js/jquery.toolbar.js"></script>
 <script src="js/jquery-ui.js" type="text/javascript"></script>
 <script src="js/pdf.min.js" type="text/javascript"></script>
@@ -89,38 +90,8 @@ sessionStorage.removeItem("togetherjs-session.peerCache");
 <script src="js/span_client.js"></script>
 <script src="togetherjs/togetherjs-min.js"></script>
 <script src="js/cobrowsing.js"></script>
-<script src="js/span_widget.js"></script>
 
-<script type="text/javascript">
-var currentLocation = window.location.href;
-var enableCoBrowse = false;
-if(currentLocation.indexOf("isLoadWSC") > -1){	
-//	setAsAgentScreen();
-	console.log("Cust Page Width -> " + currentLocation.split("custPageWidth=")[1].split("&")[0]);
-	console.log("Cust Page Height -> " + currentLocation.split("custPageHeight=")[1]);
-	//document.getElementById("callAgentButton").style.display="none";
-	console.log("Do not load WebRTC controls.");	
-}else{
-	enableCoBrowse = true;
-	var sessionId = sessionStorage.getItem("sessionId");
-	console.log("========================"+sessionId);
-	$(document).ready(function() {
-		//onPageLoad();
-		
-	});
-}
 
-function pdfPageLoad(){
-	  var myselect = null;
-	  var pdfUrl =null;
-			myselect =  document.getElementById("pdfPageId");
-			 pdfUrl = myselect.options[myselect.selectedIndex].value + ".pdf";
-			console.log("--Customer");
-			document.getElementById("pdfPageUrl").data = pdfUrl;
-			updatePdfPage(pdfUrl);
-}
-
-</script>
 </head>
 
 <body>
@@ -158,10 +129,10 @@ function pdfPageLoad(){
 			</div>
 			<div class="popup-head-right pull-right">
 				<div class="btn-group">
-					<!-- <button class="chat-header-button" data-toggle="dropdown"
+					<button class="chat-header-button" data-toggle="dropdown"
 						type="button" aria-expanded="false">
 						<i class="glyphicon glyphicon-cog"></i>
-					</button> -->
+					</button>
 					<ul role="menu" class="dropdown-menu pull-right">
 						<li><a href="#"><i class="fa fa-video-camera"></i> Video
 								Call</a></li>
@@ -181,12 +152,12 @@ function pdfPageLoad(){
 				</button>
 			</div>
 		</div>
-		<div class="popup-messages"></div>
-		<div class="popup-messages-footer">
+		<!-- <div class="popup-messages"></div> -->
+		<!-- <div class="popup-messages-footer">
 			<textarea id="status_message" placeholder="Type a message..."
 				rows="10" cols="40" name="message"></textarea>
 			<div class="btn-footer">
-				<!-- <button class="bg_none">
+				<button class="bg_none">
 					<i class="glyphicon glyphicon-film"></i>
 				</button>
 				<button class="bg_none">
@@ -194,12 +165,12 @@ function pdfPageLoad(){
 				</button>
 				<button class="bg_none">
 					<i class="glyphicon glyphicon-paperclip"></i>
-				</button> -->
+				</button>
 				<button class="bg_none pull-right">
 					<i class="fa fa-arrow-circle-right" onclick="sendMessage();"></i>
 				</button>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 
@@ -272,45 +243,60 @@ function pdfPageLoad(){
 		</div>
 	</div>
 	<div id="agentMainScreen" style="display: none;">
-		<div id="drag" style="top: 150px;">
-			<div style="position: absolute; right: 7%; top: 31%">
-				<div id="normal-button" class="settings-button"
-					style="position: absolute; right: 1%; z-index: 999999999;">
-					<img src="img/mayday_48.png" />
-				</div>
-			</div>
+		 <a href="#" id="addClass" class="conversation-btn"><img src="images/mayday-48.png"/></a> 
+  <div class="conversation-box chat-conversation" id="convqnimate">
+  <div class="slider" ><i class="fa fa-bars"></i></div>
+    <div class="conversation-head">
 
-			<div id="user-options" class="toolbar-icons" style="display: none;">
-				<a href="#" id="video-panel" onclick=" return spanCall(true);"
-					data-toggle="tooltip" title="Video Call"><i
-					class="fa fa-video-camera"></i></a> <a href="#" id="dail-textbox"
-					onclick=" return spanCall(false);" data-toggle="tooltip"
-					title="Audio Call"><i class="fa fa-microphone"></i></a> <a href="#"
-					id="chat_popup" onclick=" return chat_pop();" data-toggle="tooltip"
-					title="Insant Message"><i class="fa fa-comment"></i></a> <a
-					href="#" id="share_pdf" onclick="return showPdfScreen();"
-					data-toggle="tooltip" title="Pdf Share"><i
-					class="fa fa-share-square-o"></i></a> <a href="#" id="hide-video-panel"
-					onclick="callHangUp();" data-toggle="tooltip" title="End Call"><i
-					class="fa fa-ban"></i></a>
-			</div>
+    	
+      <!--<div class="conversation-head-left pull-left" onclick="toolbarToggel()"><img src="images/mayday-48.png"></div>-->
+      <div class="conversation-head-right pull-right">
+      	<button  id="removeConv" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+        
+      </div>
+    </div>
+    <div class="conversation-body">
+      
+      <div class="conversation_div"> 
+      <!--video-->
+        
+          <video width="99%" height="200px"   id="remoteVideo"  autoplay controls><source src="" type="video/mp4"> Your browser does not support the video tag. </video>
+          <div id="video-controls">
+    
+    <button type="button" id="CloseVideo">Close Video</button>
+  </div>
 
-			<div id="video-options" class="toolbar-icons"
-				style="display: none; z-index: 999999999; position: absolute; width: 300px; height: 176px; right: 1%; top: 0%;">
-				<video width="100%" height="100%" id="remoteVideo" autoplay controls>
-					Your browser does not support the video tag.
-				</video>
-				<!--  For Local video -->
-				<!-- <video src="" id="localVideo" autoplay="autoplay" style="margin:0 0 5px 0px;height:225px;width:400px" class="img-responsive" style="display:none;"></video>
-			 -->
+ 
+        </div>
+  
+        
+        <!--chat--> 
+         <!--CHAT-->
+<div class="popup-box chat-popup" id="qnimate">
+    		
+			<div class="popup-messages">
 			</div>
-		</div>
-		<div id="dailpad-options" class="toolbar-icons"
-			style="display: none; z-index: 9999; position: absolute; width: 300px; right: -1%; top: 18%;">
-			<label>Enter Number</label> <input type="text" name="destNumber">
-			<br /> <input id="dest-number" type="button" value="Call"
-				style="right: 21%; position: absolute; width: 44%;">
-		</div>
+			<div class="popup-messages-footer">
+			<textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
+			<div class="btn-footer">
+            <a href="#" id="video-panel" onclick=" return spanCall(true);">
+			<button class="bg_none"><i class="glyphicon glyphicon-facetime-video"></i> </button>
+            </a>
+            <a href="#" id="video-panel" onclick=" return spanCall(false);">
+			<button class="bg_none"><i class="fa fa-phone"></i> </button>
+			</a>
+			<a href="#" id="video-panel" onclick=" return showPdfScreen();">
+            <button class="bg_none"><i class="glyphicon glyphicon-share"></i> </button>
+            </a>
+            <button class="bg_none"><i class="fa fa-pencil-square-o"></i> </button>
+			<button class="bg_none pull-right"><i class="fa fa-arrow-circle-right" onclick="sendMessage();"></i> </button>
+			</div>
+			</div>
+	  </div>
+
+   <!--END CHAT--> 
+      </div>
+    </div>
 		<!--share button-->
 		<div id="share" style="z-index: 99999; display: block;">
 			<div id="clickshare1">
@@ -452,7 +438,7 @@ function pdfPageLoad(){
 																<input placeholder="Search" class="form-control" id="q"
 																	name="q" type="text"> <span
 																	class="input-group-btn search">
-																	<button type="button" class="btn btn-default">
+																	<button type="submit" class="btn btn-default">
 																		<i class="icon-search"></i>
 																	</button>
 																</span>
@@ -479,6 +465,7 @@ function pdfPageLoad(){
 										<li class="dropdown first clearfix"><a
 											class="dropdown-toggle" data-toggle="dropdown" href="#">Services</a>
 											<ul class="dropdown-menu sub-links">
+
 												<li>
 													<div class="col-md-8 clearfix">
 														<p>
@@ -902,84 +889,103 @@ function pdfPageLoad(){
 			<span class="feedback-img"></span>
 		</div>
 	</div>
-
-
-
-
-
-	<script>
-	$(document).ready(function() {
-		//spanThemeLogin();
-		if($(window).width()>540){
-		    	$('.footer-container').each(function() {
-			var heightBox = 0;
-			$('.footer-links-container', this).each(function() {
-                if(($(this).height()) > heightBox){
-					heightBox = $(this).height(); 
-				}
-            });
-			$('.footer-links-container', this).height(heightBox);
-        }); 
-		
-	}
-		
-    });
-	$('div.site-map-menu').click(function(){
-		
-		$('.site-map').slideToggle('slow');
-		//$('.site-map').slideToggle('slow');
-		
-	});
-	$('.footer-links-container h5').click(function(){
-		$(this).next("ul").toggle('slow');
-	});
-	
-	if($(window).width() > (999) ){
-		var contHt = $('.sub-links').height();
-		console.log(contHt);
-		$('.nav-content').css('height', contHt);
-	}
-	
-	$("body").find('a').addClass("dsbld");
-
-  $(".dsbld").attr("href","#");
-  $('a[target="_blank"]').removeAttr('target');
- 
-$("#clear").click( function() {
-	var c=document.getElementById("sketch");
-	var ctx=c.getContext("2d");
-	ctx.clearRect(0, 0, c.width, c.height);
-	if(gUserName.indexOf("jack") == 0){
-		parent.clearCanvas();
-	} else {
-		clearCanvas();
-	}
-});
-
- </script>
-
-	<script>
-/* $(function () {
-    $("#clickshare1").toggle(function () {
-        $(this).parent().animate({left:'0px'}, {queue: false, duration: 500});
-    }, function () {
-        $(this).parent().animate({left:'-53%'}, {queue: false, duration: 500});
-    });
-});
- */
-$(function(){
-	$("#chat_popup").click(function () {
-		    $('#qnimate').addClass('popup-box-on');
-	  });
-	          
-   $("#removeClass").click(function () {
-	   $('#qnimate').removeClass('popup-box-on');
-	     });
- }); 
- 
-</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/span_screenShare.js" type="text/javascript"></script>
 	<script src="js/together_canvas.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+$("#addClass").click(function () {
+          $('#convqnimate').addClass('conversation-box-on');});
+          $("#removeConv").click(function () {
+          $('#convqnimate').removeClass('conversation-box-on');
+		  $(".conversation-btn").css("display","block");});
+  })
+  $(function(){
+	$("#chat_popup").click(function () {
+		    $('#qnimate').addClass('popup-box-on');
+		    $("#chat_headername").text=g_username;
+	  });
+	          
+	     $("#removeClass").click(function () {
+	   $('#qnimate').removeClass('popup-box-on');
+	     });
+ }); 
+ $(".slider").toggle(function () {
+		$(".conversation-btn").css("display","none");
+			
+      $(".conversation-box").animate({right:'-380px'}, {queue: false, duration: 500});
+    }, function () {
+       $(".conversation-box").animate({right:'0px'}, {queue: false, duration: 500});
+	  
+    });
+
+
+
+            jQuery(document).ready(function($) {
+				
+                // Define any icon actions before calling the toolbar
+                $('#video-panel').on('click', function( event ) {
+                    //event.preventDefault();
+                    console.log("click event got triggered!");
+                    //$('#video-button').toolbar({content: '#video-options', position: 'bottom'});
+                    $('#dailpad-options').hide();
+                    $('#video-options').show();
+                    
+                });
+                
+                $('#hide-video-panel').on('click', function( event ) {
+                    //event.preventDefault();
+                    console.log("click event got triggered!");
+                    //$('#video-button').toolbar({content: '#video-options', position: 'bottom'});
+                    $('#video-options').hide();
+                    $('#dailpad-options').hide();
+                    
+                });
+                $('#dail-textbox').on('click', function( event ) {
+                    //event.preventDefault();
+                    console.log("click event got triggered!");
+                    //$('#video-button').toolbar({content: '#video-options', position: 'bottom'});
+                    $('#video-options').hide();
+                    $('#dailpad-options').show();
+                    
+                });
+                
+                $('#dest-number').on('click', function( event ) {
+                    //event.preventDefault();
+                    console.log("click event got triggered!");
+                    //$('#video-button').toolbar({content: '#video-options', position: 'bottom'});
+                    $('#dailpad-options').hide();
+                    $('#video-options').show();
+                    
+                });
+                $('#dest-number').on('click', function( event ) {
+                    //event.preventDefault();
+                    console.log("click event got triggered!");
+                    //$('#video-button').toolbar({content: '#video-options', position: 'bottom'});
+                    $('#dailpad-options').hide();
+                    $('#video-options').show();
+                    
+                });
+                $('#normal-button').toolbar({content: '#user-options', position: 'top'});
+                //$('#video-button').toolbar({content: '#video-options', position: 'bottom'});
+                /* $('#normal-button-bottom').toolbar({content: '#user-options', position: 'bottom'});
+                $('#normal-button-small').toolbar({content: '#user-options-small', position: 'top', hideOnClick: true});
+                $('#button-on-hover').toolbar({content: '#user-options', position: 'top', hover: true});
+
+                $('#button-left').toolbar({content: '#user-options', position: 'left'});
+                $('#button-right').toolbar({content: '#user-options', position: 'right'});
+                $('#link-toolbar').toolbar({content: '#user-options', position: 'top' }); */
+                $("#video-options").draggable();
+                $("#video-options").draggable();
+                $("#normal-button").draggable();
+				
+			 
+            });
+       
+           
+        </script>
+
 </body>
 </html>
