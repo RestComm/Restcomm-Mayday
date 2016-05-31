@@ -19,7 +19,7 @@
 
 var contact = "";
 var video_flag;
-
+var currentCall;
 var spanWrtcConfiguration = {
 	communicationMode : 'SIP',
 	sip : {
@@ -48,7 +48,7 @@ var spanCallConfiguration = {
 	localMediaStream : '',
 	videoCodecsFilter : "",
 	videoMediaFlag : true,
-	messageMediaFlag : true
+	messageMediaFlag : false
 };
 var chatObject = {
 	id : "",
@@ -61,7 +61,7 @@ var inCommingCallConfiguration = {
 	localMediaStream : '',
 	audioMediaFlag : true,
 	videoMediaFlag : true,
-	messageMediaFlag : true
+	messageMediaFlag : false
 
 };
 
@@ -189,6 +189,22 @@ function spanThemeLogin() {
 		$("#agent1").show();
 		$("#agent2").hide();
 		$("#call_info").show();
+		currentCall = webRTCommCall;
+		currentCall.hangup();
+		alert(" on close event " +currentCall);
+		currentCall= null;
+		delete currentCall;
+		alert(" after on close event " +currentCall);
+		if (spanCallConfiguration){
+		//	spanCallConfiguration.localMediaStream=null;
+		//	delete spanCallConfiguration.localMediaStream ;
+			
+		}
+		if (inCommingCallConfiguration){
+		//	inCommingCallConfiguration.localMediaStream=null;
+		//	delete inCommingCallConfiguration.localMediaStream ;
+		}
+		
 	};
 
 	spanWebrtcEventListner.onWebRTCommCallOpenedEvent = function(webRTCommCall) {
@@ -209,7 +225,23 @@ function spanThemeLogin() {
 
 		console.log("onWebRTCommCallHangupEvent");
 		currentCall = webRTCommCall;
+		alert(" on hangup event " +currentCall);
 		currentCall.hangup();
+		
+		currentCall= null;
+		delete currentCall;
+		alert("after on hangup event " +currentCall);
+		if (spanCallConfiguration){
+		//	spanCallConfiguration.localMediaStream=null;
+		//	delete spanCallConfiguration.localMediaStream ;
+			
+		}
+		if (inCommingCallConfiguration){
+		//	inCommingCallConfiguration.localMediaStream=null;
+		//	delete inCommingCallConfiguration.localMediaStream ;
+		}
+		
+
 		/*------ for local video -----*/
 		/*var local_video=document.getElementById('localVideo');
 		local_video.src="";*/

@@ -4986,3 +4986,59 @@ WebRTCommMessageEventListenerInterface.prototype.onWebRTCommMessageSentEvent = f
 WebRTCommMessageEventListenerInterface.prototype.onWebRTCommMessageSendErrorEvent = function(message, error) {
 	throw "WebRTCommCallEventListenerInterface:onWebRTCommMessageSendErrorEvent(): not implemented;";
 };
+
+
+
+//by sowmya gururaj 
+
+/**
+* Received message event
+* @public
+* @param {WebRTCommMessage} message object
+*/
+WebRTCommCallEventListenerInterface.prototype.onWebRTCommDataMessageReceivedEvent = function(message) {
+   throw "WebRTCommCallEventListenerInterface:onWebRTCommDataMessageReceivedEvent(): not implemented;";
+};
+
+/**
+* Received message event
+* @public
+* @param {WebRTCommMessage} message object
+*/
+WebRTCommCallEventListenerInterface.prototype.onWebRTCommDataMessageSentEvent = function(message) {
+   throw "WebRTCommCallEventListenerInterface:onWebRTCommDataMessageSentEvent(): not implemented;";
+};
+
+/**
+* Send message error event
+* @public
+* @param {WebRTCommMessage} message object
+* @param {String} error code
+*/
+WebRTCommCallEventListenerInterface.prototype.onWebRTCommDataMessageSendErrorEvent = function(message, error) {
+   throw "WebRTCommCallEventListenerInterface:onWebRTCommDataMessageSendErrorEvent(): not implemented;";
+};
+
+/**
+* Data channel was established, ready to send messages
+* @public
+*/
+WebRTCommCallEventListenerInterface.prototype.onWebRTCommDataMessageChannelOnOpenEvent = function() {
+   throw "WebRTCommCallEventListenerInterface:onWebRTCommDataMessageChannelOnOpenEvent(): not implemented;";
+};
+
+/**
+* Data channel was suddenly closed
+* @public
+*/
+WebRTCommCallEventListenerInterface.prototype.onWebRTCommDataMessageChannelOnCloseEvent = function() {
+   throw "WebRTCommCallEventListenerInterface:onWebRTCommDataMessageChannelOnCloseEvent(): not implemented;";
+};
+
+/**
+* There was a failure establishing the Data channel
+* @public
+*/
+WebRTCommCallEventListenerInterface.prototype.onWebRTCommDataMessageChannelOnErrorEvent = function() {
+   throw "WebRTCommCallEventListenerInterface:onWebRTCommDataMessageChannelOnErrorEvent(): not implemented;";
+};
